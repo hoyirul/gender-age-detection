@@ -5,16 +5,6 @@ import sqlite3
 conn = sqlite3.connect('visitors.db')
 cursor = conn.cursor()
 
-# Buat tabel jika belum ada
-cursor.execute('''
-    CREATE TABLE IF NOT EXISTS visitors (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        gender TEXT,
-        age_group TEXT
-    )
-''')
-conn.commit()
-
 # Muat model dan konfigurasi
 faceProto = "./models/opencv_face_detector.pbtxt"
 faceModel = "./models/opencv_face_detector_uint8.pb"
